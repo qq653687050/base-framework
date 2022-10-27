@@ -1,0 +1,91 @@
+syntax = "proto3";
+package kratos.api;
+
+option go_package = "base-framework/inf/conf;conf";
+
+import "google/protobuf/duration.proto";
+
+message Bootstrap {
+
+  Nacos nacos = 1;
+  Application application = 2;
+}
+
+message Extend{
+  Server server = 3;
+  Data data = 4;
+}
+
+message Server {
+  message HTTP {
+    string network = 1;
+    string addr = 2;
+    google.protobuf.Duration timeout = 3;
+  }
+  message GRPC {
+    string network = 1;
+    string addr = 2;
+    google.protobuf.Duration timeout = 3;
+  }
+  HTTP http = 1;
+  GRPC grpc = 2;
+}
+
+message Data {
+  message Database {
+    bool  enable = 1;
+    string driver = 2;
+    string source = 3;
+    message Pool{
+      int32 max = 1;
+      int32 min = 2;
+
+    }
+    Pool pool = 4;
+  }
+  message Redis {
+    bool enable = 1;
+    repeated string addr = 2;
+    string password = 3;
+    int32 db = 4;
+    message Pool{
+      int32 size = 1;
+      int32 minIdle_conns = 2;
+      google.protobuf.Duration timeout = 3;
+      google.protobuf.Duration idle_check_frequency = 4;
+      google.protobuf.Duration idle_timeout = 5;
+      google.protobuf.Duration max_conn_age = 6;
+    }
+    Pool pool = 5;
+    google.protobuf.Duration dial_timeout = 6;
+    google.protobuf.Duration read_timeout = 7;
+    google.protobuf.Duration write_timeout = 8;
+  }
+  Database database = 1;
+  Redis redis = 2;
+}
+
+message Nacos{
+  message Service{
+    string ip = 1;
+    uint64 port = 2;
+  }
+  message Discovery{
+    string namespace = 1;
+  }
+  message Config{
+    string data_id = 1 ;
+    string group = 2;
+
+  }
+  Service service = 1;
+  Discovery discovery = 2;
+  repeated Config config = 3;
+}
+
+message Application{
+  string name = 1;
+  string active = 2;
+  string version = 3;
+}
+
