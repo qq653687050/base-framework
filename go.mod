@@ -1,4 +1,4 @@
-module github.com/qq653687050/base-framework
+module base-framework
 
 go 1.18
 
