@@ -13,6 +13,7 @@ import (
  * @date:2022/8/10 17:05
  * @Version: 1.0
  */
+//////
 
 type BaseRepository[T any] struct {
 	Data *base_data.Data
