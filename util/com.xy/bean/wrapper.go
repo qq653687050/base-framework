@@ -154,7 +154,7 @@ func (w *Wrapper) Order(asc bool, column string) *Wrapper {
 		column = "id"
 	}
 	w.orders = append(w.orders, orderByCol{
-		Column: column,
+		Column: "`" + column + "`",
 		Asc:    asc,
 	})
 	return w
@@ -177,7 +177,7 @@ func (w *Wrapper) Desc(column string) *Wrapper {
 }
 
 func (w *Wrapper) Group(column string) *Wrapper {
-	w.group = append(w.group, column)
+	w.group = append(w.group, "`"+column+"`")
 	return w
 }
 
