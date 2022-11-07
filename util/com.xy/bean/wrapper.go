@@ -144,7 +144,7 @@ func (w *Wrapper) ConSet(condition bool, column string, val any) *Wrapper {
 	return w
 }
 
-func (w *Wrapper) In(column string, val string) *Wrapper {
+func (w *Wrapper) In(column string, val any) *Wrapper {
 	w.where("`"+column+"` in (?) ", val)
 	return w
 }
@@ -162,7 +162,7 @@ func (w *Wrapper) Order(asc bool, column string) *Wrapper {
 
 func (w *Wrapper) Asc(column string) *Wrapper {
 	w.orders = append(w.orders, orderByCol{
-		Column: column,
+		Column: "`" + column + "`",
 		Asc:    true,
 	})
 	return w
@@ -170,7 +170,7 @@ func (w *Wrapper) Asc(column string) *Wrapper {
 
 func (w *Wrapper) Desc(column string) *Wrapper {
 	w.orders = append(w.orders, orderByCol{
-		Column: column,
+		Column: "`" + column + "`",
 		Asc:    false,
 	})
 	return w

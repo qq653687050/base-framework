@@ -26,8 +26,8 @@ type Bootstrap struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Nacos       *Nacos       `protobuf:"bytes,1,opt,name=nacos,proto3" json:"nacos,omitempty"`
-	Application *Application `protobuf:"bytes,2,opt,name=application,proto3" json:"application,omitempty"`
+	Nacos       *Nacos       `protobuf:"bytes,1,opt,name=nacos,proto3" json:"nacos"`
+	Application *Application `protobuf:"bytes,2,opt,name=application,proto3" json:"application"`
 }
 
 func (x *Bootstrap) Reset() {
@@ -81,8 +81,8 @@ type Extend struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Server *Server `protobuf:"bytes,3,opt,name=server,proto3" json:"server,omitempty"`
-	Data   *Data   `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Server *Server `protobuf:"bytes,3,opt,name=server,proto3" json:"server"`
+	Data   *Data   `protobuf:"bytes,4,opt,name=data,proto3" json:"data"`
 }
 
 func (x *Extend) Reset() {
@@ -136,8 +136,8 @@ type Server struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Http *Server_HTTP `protobuf:"bytes,1,opt,name=http,proto3" json:"http,omitempty"`
-	Grpc *Server_GRPC `protobuf:"bytes,2,opt,name=grpc,proto3" json:"grpc,omitempty"`
+	Http *Server_HTTP `protobuf:"bytes,1,opt,name=http,proto3" json:"http"`
+	Grpc *Server_GRPC `protobuf:"bytes,2,opt,name=grpc,proto3" json:"grpc"`
 }
 
 func (x *Server) Reset() {
@@ -191,8 +191,8 @@ type Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Database *Data_Database `protobuf:"bytes,1,opt,name=database,proto3" json:"database,omitempty"`
-	Redis    *Data_Redis    `protobuf:"bytes,2,opt,name=redis,proto3" json:"redis,omitempty"`
+	Database *Data_Database `protobuf:"bytes,1,opt,name=database,proto3" json:"database"`
+	Redis    *Data_Redis    `protobuf:"bytes,2,opt,name=redis,proto3" json:"redis"`
 }
 
 func (x *Data) Reset() {
@@ -246,9 +246,9 @@ type Nacos struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Service   *Nacos_Service   `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
-	Discovery *Nacos_Discovery `protobuf:"bytes,2,opt,name=discovery,proto3" json:"discovery,omitempty"`
-	Config    []*Nacos_Config  `protobuf:"bytes,3,rep,name=config,proto3" json:"config,omitempty"`
+	Service   *Nacos_Service   `protobuf:"bytes,1,opt,name=service,proto3" json:"service"`
+	Discovery *Nacos_Discovery `protobuf:"bytes,2,opt,name=discovery,proto3" json:"discovery"`
+	Config    []*Nacos_Config  `protobuf:"bytes,3,rep,name=config,proto3" json:"config"`
 }
 
 func (x *Nacos) Reset() {
@@ -309,8 +309,8 @@ type Application struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name   string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Active string `protobuf:"bytes,2,opt,name=active,proto3" json:"active,omitempty"`
+	Name   string `protobuf:"bytes,1,opt,name=name,proto3" json:"name"`
+	Active string `protobuf:"bytes,2,opt,name=active,proto3" json:"active"`
 }
 
 func (x *Application) Reset() {
@@ -364,9 +364,9 @@ type Server_HTTP struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Network string               `protobuf:"bytes,1,opt,name=network,proto3" json:"network,omitempty"`
-	Addr    string               `protobuf:"bytes,2,opt,name=addr,proto3" json:"addr,omitempty"`
-	Timeout *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout,omitempty"`
+	Network string               `protobuf:"bytes,1,opt,name=network,proto3" json:"network"`
+	Addr    string               `protobuf:"bytes,2,opt,name=addr,proto3" json:"addr"`
+	Timeout *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout"`
 }
 
 func (x *Server_HTTP) Reset() {
@@ -427,9 +427,9 @@ type Server_GRPC struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Network string               `protobuf:"bytes,1,opt,name=network,proto3" json:"network,omitempty"`
-	Addr    string               `protobuf:"bytes,2,opt,name=addr,proto3" json:"addr,omitempty"`
-	Timeout *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout,omitempty"`
+	Network string               `protobuf:"bytes,1,opt,name=network,proto3" json:"network"`
+	Addr    string               `protobuf:"bytes,2,opt,name=addr,proto3" json:"addr"`
+	Timeout *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout"`
 }
 
 func (x *Server_GRPC) Reset() {
@@ -490,10 +490,10 @@ type Data_Database struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Enable bool                `protobuf:"varint,1,opt,name=enable,proto3" json:"enable,omitempty"`
-	Driver string              `protobuf:"bytes,2,opt,name=driver,proto3" json:"driver,omitempty"`
-	Source string              `protobuf:"bytes,3,opt,name=source,proto3" json:"source,omitempty"`
-	Pool   *Data_Database_Pool `protobuf:"bytes,4,opt,name=pool,proto3" json:"pool,omitempty"`
+	Enable bool                `protobuf:"varint,1,opt,name=enable,proto3" json:"enable"`
+	Driver string              `protobuf:"bytes,2,opt,name=driver,proto3" json:"driver"`
+	Source string              `protobuf:"bytes,3,opt,name=source,proto3" json:"source"`
+	Pool   *Data_Database_Pool `protobuf:"bytes,4,opt,name=pool,proto3" json:"pool"`
 }
 
 func (x *Data_Database) Reset() {
@@ -561,14 +561,14 @@ type Data_Redis struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Enable       bool                 `protobuf:"varint,1,opt,name=enable,proto3" json:"enable,omitempty"`
-	Addr         []string             `protobuf:"bytes,2,rep,name=addr,proto3" json:"addr,omitempty"`
-	Password     string               `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
-	Db           int32                `protobuf:"varint,4,opt,name=db,proto3" json:"db,omitempty"`
-	Pool         *Data_Redis_Pool     `protobuf:"bytes,5,opt,name=pool,proto3" json:"pool,omitempty"`
-	DialTimeout  *durationpb.Duration `protobuf:"bytes,6,opt,name=dial_timeout,json=dialTimeout,proto3" json:"dial_timeout,omitempty"`
-	ReadTimeout  *durationpb.Duration `protobuf:"bytes,7,opt,name=read_timeout,json=readTimeout,proto3" json:"read_timeout,omitempty"`
-	WriteTimeout *durationpb.Duration `protobuf:"bytes,8,opt,name=write_timeout,json=writeTimeout,proto3" json:"write_timeout,omitempty"`
+	Enable       bool                 `protobuf:"varint,1,opt,name=enable,proto3" json:"enable"`
+	Addr         []string             `protobuf:"bytes,2,rep,name=addr,proto3" json:"addr"`
+	Password     string               `protobuf:"bytes,3,opt,name=password,proto3" json:"password"`
+	Db           int32                `protobuf:"varint,4,opt,name=db,proto3" json:"db"`
+	Pool         *Data_Redis_Pool     `protobuf:"bytes,5,opt,name=pool,proto3" json:"pool"`
+	DialTimeout  *durationpb.Duration `protobuf:"bytes,6,opt,name=dial_timeout,json=dialTimeout,proto3" json:"dial_timeout"`
+	ReadTimeout  *durationpb.Duration `protobuf:"bytes,7,opt,name=read_timeout,json=readTimeout,proto3" json:"read_timeout"`
+	WriteTimeout *durationpb.Duration `protobuf:"bytes,8,opt,name=write_timeout,json=writeTimeout,proto3" json:"write_timeout"`
 }
 
 func (x *Data_Redis) Reset() {
@@ -664,8 +664,8 @@ type Data_Database_Pool struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Max int32 `protobuf:"varint,1,opt,name=max,proto3" json:"max,omitempty"`
-	Min int32 `protobuf:"varint,2,opt,name=min,proto3" json:"min,omitempty"`
+	Max int32 `protobuf:"varint,1,opt,name=max,proto3" json:"max"`
+	Min int32 `protobuf:"varint,2,opt,name=min,proto3" json:"min"`
 }
 
 func (x *Data_Database_Pool) Reset() {
@@ -719,12 +719,12 @@ type Data_Redis_Pool struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Size               int32                `protobuf:"varint,1,opt,name=size,proto3" json:"size,omitempty"`
-	MinIdleConns       int32                `protobuf:"varint,2,opt,name=minIdle_conns,json=minIdleConns,proto3" json:"minIdle_conns,omitempty"`
-	Timeout            *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout,omitempty"`
-	IdleCheckFrequency *durationpb.Duration `protobuf:"bytes,4,opt,name=idle_check_frequency,json=idleCheckFrequency,proto3" json:"idle_check_frequency,omitempty"`
-	IdleTimeout        *durationpb.Duration `protobuf:"bytes,5,opt,name=idle_timeout,json=idleTimeout,proto3" json:"idle_timeout,omitempty"`
-	MaxConnAge         *durationpb.Duration `protobuf:"bytes,6,opt,name=max_conn_age,json=maxConnAge,proto3" json:"max_conn_age,omitempty"`
+	Size               int32                `protobuf:"varint,1,opt,name=size,proto3" json:"size"`
+	MinIdleConns       int32                `protobuf:"varint,2,opt,name=minIdle_conns,json=minIdleConns,proto3" json:"minIdle_conns"`
+	Timeout            *durationpb.Duration `protobuf:"bytes,3,opt,name=timeout,proto3" json:"timeout"`
+	IdleCheckFrequency *durationpb.Duration `protobuf:"bytes,4,opt,name=idle_check_frequency,json=idleCheckFrequency,proto3" json:"idle_check_frequency"`
+	IdleTimeout        *durationpb.Duration `protobuf:"bytes,5,opt,name=idle_timeout,json=idleTimeout,proto3" json:"idle_timeout"`
+	MaxConnAge         *durationpb.Duration `protobuf:"bytes,6,opt,name=max_conn_age,json=maxConnAge,proto3" json:"max_conn_age"`
 }
 
 func (x *Data_Redis_Pool) Reset() {
@@ -806,8 +806,8 @@ type Nacos_Service struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Ip   string `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip,omitempty"`
-	Port uint64 `protobuf:"varint,2,opt,name=port,proto3" json:"port,omitempty"`
+	Ip   string `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip"`
+	Port uint64 `protobuf:"varint,2,opt,name=port,proto3" json:"port"`
 }
 
 func (x *Nacos_Service) Reset() {
@@ -861,7 +861,7 @@ type Nacos_Discovery struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace"`
 }
 
 func (x *Nacos_Discovery) Reset() {
@@ -908,8 +908,8 @@ type Nacos_Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DataId string `protobuf:"bytes,1,opt,name=data_id,json=dataId,proto3" json:"data_id,omitempty"`
-	Group  string `protobuf:"bytes,2,opt,name=group,proto3" json:"group,omitempty"`
+	DataId string `protobuf:"bytes,1,opt,name=data_id,json=dataId,proto3" json:"data_id"`
+	Group  string `protobuf:"bytes,2,opt,name=group,proto3" json:"group"`
 }
 
 func (x *Nacos_Config) Reset() {
